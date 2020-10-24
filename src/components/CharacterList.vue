@@ -1,4 +1,5 @@
 <template>
+  <section>
   <ul>
       <character-list-item v-for="(character, index) in characters" 
       :key="index"
@@ -6,6 +7,7 @@
       </character-list-item>
 
   </ul>
+  </section>
 </template>
 
 <script>
@@ -15,7 +17,7 @@ import CharacterListItem from "@/components/CharacterListItem";
 export default {
     name: "character-list",
     components: {
-        CharacterListItem
+        'character-list-item': CharacterListItem
     },
     props : ["characters"],
 

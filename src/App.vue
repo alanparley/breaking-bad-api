@@ -5,7 +5,9 @@
     </header>
     <section class="main-container">
     <character-list :characters="characters"></character-list>
-    <character-detail :character='selectedCharacter'></character-detail>
+    <character-detail :character='selectedCharacter' :favouriteCharacters='favouriteCharacters'></character-detail>
+    <favourite-characters :favouriteCharacters='favouriteCharacters'></favourite-characters>
+
     </section>
   </main>
 </template>
@@ -14,6 +16,7 @@
 
 import CharacterList from '@/components/CharacterList';
 import CharacterDetail from '@/components/CharacterDetail'
+import FavouriteCharacters from './components/FavouriteCharacters.vue'
 import { eventBus } from '@/main.js'
 
 export default {
@@ -21,13 +24,15 @@ export default {
   data() {
     return {
       characters: [],
-      selectedCharacter: null
+      selectedCharacter: null,
+      favouriteCharacters: []
     };
   },
 
     components: {
       CharacterList,
       CharacterDetail,
+      'favourite-characters':FavouriteCharacters
     },
     
   mounted (){
@@ -38,6 +43,10 @@ export default {
     eventBus.$on("character-selected", (character) => {
       this.selectedCharacter = character;
     });
+
+    eventBus.$on('favourite-selected', (character) => {
+      this.favouriteCharacters.unshift(character)
+    })
   },
   
 
