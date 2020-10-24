@@ -1,28 +1,67 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <main>
+    <header>
+      <h1>Breaking Bad API</h1>
+    </header>
+    <section class="main-container">
+    <character-list :characters="characters"></character-list>
+    <character-detail :character='selectedCharacter'></character-detail>
+    </section>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import CharacterList from '@/components/CharacterList';
+import CharacterDetail from '@/components/CharacterDetail'
+import { eventBus } from '@/main.js'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: 'app',
+  data() {
+    return {
+      characters: [],
+      selectedCharacter: null
+    };
+  },
+
+    components: {
+      CharacterList,
+      CharacterDetail,
+    },
+    
+  mounted (){
+    fetch('https://breakingbadapi.com/api/characters')
+    .then (res => res.json())
+    .then (characters => this.characters = characters)
+
+    eventBus.$on("character-selected", (character) => {
+      this.selectedCharacter = character;
+    });
+  },
+  
+
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+main {
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkgreen;
+  font-size: 15px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  margin: 0%;
+  background-color: black;
+  color: white;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: 10pt;
 }
 </style>
