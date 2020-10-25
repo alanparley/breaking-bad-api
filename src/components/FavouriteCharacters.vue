@@ -54,6 +54,7 @@ background: linear-gradient(0deg, rgba(9,48,9,1) 23%, rgba(13,62,16,1) 39%, rgba
     width: 26%;
     height: 400px;
     text-align: center;
+    overflow-y:auto;
 }
 
 #smaller {
