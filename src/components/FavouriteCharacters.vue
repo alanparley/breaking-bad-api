@@ -3,8 +3,8 @@
     <h3>Favourite Characters</h3>
     <ul>
         <li v-for="favouriteCharacter in favouriteCharacters"><img :src="favouriteCharacter.img" id="smaller" alt="">{{ favouriteCharacter.name }}
+        
         <br>
-        <button v-on:click="updateFavourites(favouriteCharacter)"> remove</button>
         </li>
         
      </ul>
@@ -30,15 +30,8 @@ export default {
         }
     },
 
-
-    methods: {
-        updateFavourites: function(favouriteCharacter) {
-            this.selectedFavouriteCharacter = favouriteCharacter;
-
-            eventBus.$emit('favourite-selected', this.selectedFavouriteCharacter)
-        }
     }
-}
+
 </script>
 
 

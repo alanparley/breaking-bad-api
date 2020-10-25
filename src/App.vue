@@ -67,7 +67,8 @@ export default {
 
 main {
   font-family: Arial, Helvetica, sans-serif;
- background-image: url("https://www.desktopbackground.org/p/2010/07/21/51793_breaking-bad-smoke-backgrounds_2448x2448_h.jpg");
+ background: rgb(9,48,9);
+background: linear-gradient(180deg, rgba(9,48,9,1) 0%, rgba(13,62,16,1) 29%, rgba(31,96,50,1) 51%, rgba(41,119,62,1) 70%, rgba(54,148,87,1) 87%);
   color: white;
   font-size: 15px;
 
@@ -89,7 +90,8 @@ main {
 
 header {
   margin: 0%;
-  background-color: black;
+  background: rgb(9,48,9);
+background: linear-gradient(90deg, rgba(9,48,9,1) 0%, rgba(13,62,16,1) 28%, rgba(31,96,50,1) 61%, rgba(41,119,62,1) 81%, rgba(54,148,87,1) 93%);
   color: white;
   text-align: center;
   font-size: 10pt;
@@ -97,7 +99,8 @@ header {
 
 footer {
   margin: 0%;
-  background-color: black;
+  background: rgb(9,48,9);
+background: linear-gradient(270deg, rgba(9,48,9,1) 0%, rgba(13,62,16,1) 28%, rgba(31,96,50,1) 61%, rgba(41,119,62,1) 81%, rgba(54,148,87,1) 93%);
   color: white;
   text-align: center;
   font-size: 10pt;
