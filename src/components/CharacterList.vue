@@ -1,6 +1,7 @@
 <template>
   <section id='character-list'>
       <h1>Click a character for more info</h1>
+      
   <ul class="scrolly">
       <character-list-item v-for="(character, index) in characters" 
       :key="index"

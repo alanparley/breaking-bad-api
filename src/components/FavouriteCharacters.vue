@@ -2,8 +2,8 @@
 <section id='favourite-characters'>
     <h3>Favourite Characters</h3>
     <ul>
-        <li v-for="favouriteCharacter in favouriteCharacters"><img :src="favouriteCharacter.img" id="smaller" alt="">{{ favouriteCharacter.name }}
-        
+        <li v-for="favouriteCharacter in favouriteCharacters"><img :src="favouriteCharacter.img" id="smaller" alt="">{{ favouriteCharacter.name }} 
+        <button id="buttonmove" v-on:click="deleteCharacter(favouriteCharacter)">&#10060;</button>
         <br>
         </li>
         
@@ -12,12 +12,7 @@
   
 </template>
 
-
-
-
 <script>
-
-
 import { eventBus } from "@/main.js";
 
 export default {
@@ -29,7 +24,13 @@ export default {
             selectedFavouriteCharacter: null
         }
     },
+        methods :{
+            deleteCharacter: function (favouriteCharacter) {
+                this.selectedFavouriteCharacter = favouriteCharacter;
 
+                eventBus.$emit('selected-delete', this.selectedFavouriteCharacter)
+            }
+        }
     }
 
 </script>
@@ -62,5 +63,11 @@ background: linear-gradient(0deg, rgba(9,48,9,1) 23%, rgba(13,62,16,1) 39%, rgba
     width: 30px;
     object-fit: cover;
     margin-right: 10px;
+}
+
+#buttonmove {
+    margin-left: 10px;
+    
+    background-color: lightgreen;
 }
 </style>

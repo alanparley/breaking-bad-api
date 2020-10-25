@@ -1,4 +1,5 @@
 <template>
+
   <li v-on:click="handleClick">
        <img :src="character.img" :alt="'Image of ' + character.name">
        <span>{{ character.name }}</span>

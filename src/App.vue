@@ -55,6 +55,9 @@ export default {
     eventBus.$on('favourite-selected', (character) => {
       this.favouriteCharacters.unshift(character)
     })
+
+    eventBus.$on('selected-delete', (favouriteCharacter) =>  {this.favouriteCharacters.splice(this.favouriteCharacters.indexOf(this.favouriteCharacter),1)})
+
   },
   
 
@@ -95,7 +98,7 @@ header {
   margin: 0%;
   background: rgb(9,48,9);
 background: linear-gradient(90deg, rgba(9,48,9,1) 0%, rgba(13,62,16,1) 28%, rgba(31,96,50,1) 61%, rgba(41,119,62,1) 81%, rgba(54,148,87,1) 93%);
-  color: white;
+  text-shadow: 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 0px 0px 0px rgba(206,89,55,0);
   text-align: center;
   font-size: 10pt;
 }
@@ -104,7 +107,7 @@ footer {
   margin: 0%;
   background: rgb(9,48,9);
 background: linear-gradient(270deg, rgba(9,48,9,1) 0%, rgba(13,62,16,1) 28%, rgba(31,96,50,1) 61%, rgba(41,119,62,1) 81%, rgba(54,148,87,1) 93%);
-  color: white;
+  text-shadow: 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 0px 0px 0px rgba(206,89,55,0);
   text-align: center;
   font-size: 10pt;
 }
