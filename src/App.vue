@@ -70,6 +70,8 @@ main {
  background: rgb(9,48,9);
 background: linear-gradient(180deg, rgba(9,48,9,1) 0%, rgba(13,62,16,1) 29%, rgba(31,96,50,1) 51%, rgba(41,119,62,1) 70%, rgba(54,148,87,1) 87%);
   color: white;
+  margin: 0px;
+  padding: 0px;
   font-size: 15px;
 
   
@@ -82,7 +84,8 @@ background: linear-gradient(180deg, rgba(9,48,9,1) 0%, rgba(13,62,16,1) 29%, rgb
   margin-left: 100px;
   margin-right: 100px;
   padding: 10px;
-  border: solid 4px black
+  border: solid 4px white;
+  border-radius: 8px;
 
   
   

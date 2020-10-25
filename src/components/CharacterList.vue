@@ -29,10 +29,11 @@ export default {
 
 
 #character-list {
-    border: 4px solid #369457;
+        border: 4px solid black;
     border-radius: 8px;
     padding: 16px;
-    background-color: #1F6032;
+    background: rgb(9,48,9);
+background: linear-gradient(0deg, rgba(9,48,9,1) 23%, rgba(13,62,16,1) 39%, rgba(31,96,50,1) 61%, rgba(41,119,62,1) 83%, rgba(54,148,87,1) 95%);
     width: 26%;
     height: 400px;
     overflow-y:auto;
