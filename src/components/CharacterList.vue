@@ -1,6 +1,7 @@
 <template>
-  <section>
-  <ul>
+  <section id='character-list'>
+      <h1>Click a character for more info</h1>
+  <ul class="scrolly">
       <character-list-item v-for="(character, index) in characters" 
       :key="index"
       :character="character">
@@ -25,8 +26,23 @@ export default {
 </script>
 
 <style>
+
+
+#character-list {
+    border: 4px solid #369457;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #1F6032;
+    width: 26%;
+    height: 400px;
+    overflow-y:auto;
+    
+
+}
+
 ul {
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 0;  
+    
 }
 </style>
