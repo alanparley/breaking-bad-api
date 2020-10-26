@@ -56,7 +56,7 @@ export default {
       this.favouriteCharacters.unshift(character)
     })
 
-    eventBus.$on('selected-delete', (favouriteCharacter) =>  {this.favouriteCharacters.splice(this.favouriteCharacters.indexOf(this.favouriteCharacter),1)})
+    eventBus.$on('selected-delete', (favouriteCharacter) =>  {this.favouriteCharacters.splice(this.favouriteCharacters.indexOf(favouriteCharacter),1)})
 
   },
   
